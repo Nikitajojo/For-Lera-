@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#100916">
+<title>Для моей Леры ❤️</title>
+<link rel="icon" type="image/png" href="FOTO/Lera.jpg">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Great+Vibes&display=swap');
+
+:root {
+    --pink: #ff5c9a;
+    --purple: #b58aff;
+    --bg: #100916;
+    --white: #fff5fb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Comfortaa', sans-serif;
+    background: var(--bg);
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background:
+        radial-gradient(ellipse at 15% 15%, #66224d66, transparent 40%),
+        radial-gradient(ellipse at 85% 40%, #472b7766, transparent 40%),
+        radial-gradient(ellipse at 50% 100%, #9a285b33, transparent 50%),
+        var(--bg);
+}
+
+#stars {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+nav {
+    position: fixed;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(92%, 850px);
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    z-index: 10;
+    border: 1px solid #ffffff20;
+    border-radius: 50px;
+    background: #180e22b8;
+    backdrop-filter: blur(20px);
+}
+
+.logo {
+    font-size: 14px;
+    font-weight: 700;
+    color: #ff8db9;
+}
+
+nav a {
+    color: #fce8f4;
+    text-decoration: none;
+    font-size: 11px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--pink);
+}
+
+.hero {
+    min-height: 100svh;
+    padding: 125px 20px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.eyebrow {
+    color: #ff9dc3;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    animation: fadeUp 1s both;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 12vw, 115px);
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -4px;
+    background: linear-gradient(120deg, #fff 10%, #ff82b5 45%, #c7a3ff 85%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 0 30px #ff5c9a22);
+    animation: fadeUp 1.2s both;
+}
+
+.script {
+    font-family: 'Great Vibes', cursive;
+    color: #ff8bb9;
+    font-size: clamp(43px, 8vw, 76px);
+    margin-top: 4px;
+    animation: fadeUp 1.5s both;
+}
+
+.subtitle {
+    max-width: 550px;
+    color: #cdb9d2;
+    font-size: 14px;
+    line-height: 2;
+    margin: 25px 0;
+    animation: fadeUp 1.8s both;
+}
+
+.btn {
+    border: 0;
+    border-radius: 50px;
+    padding: 16px 25px;
+    background: linear-gradient(110deg, #ff5598, #b779f7);
+    color: white;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 12px;
+    cursor: pointer;
+    box-shadow: 0 8px 35px #ff559944;
+    transition: transform .3s, box-shadow .3s;
+}
+
+.btn:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 12px 45px #ff559966;
+}
+
+.btn:active {
+    transform: scale(.97);
+}
+
+.scroll-hint {
+    margin-top: 65px;
+    color: #9e829f;
+    font-size: 10px;
+    letter-spacing: 3px;
+    animation: float 2s infinite;
+}
+
+section {
+    padding: 90px 20px;
+    scroll-margin-top: 70px;
+}
+
+.container {
+    width: min(100%, 850px);
+    margin: auto;
+}
+
+.section-label {
+    text-align: center;
+    color: #ff88b7;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 10px;
+    margin-bottom: 17px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: clamp(27px, 6vw, 43px);
+    margin-bottom: 18px;
+    line-height: 1.4;
+}
+
+.section-desc {
+    text-align: center;
+    color: #bca9c5;
+    font-size: 13px;
+    line-height: 2;
+    max-width: 570px;
+    margin: 0 auto 40px;
+}
+
+.glass {
+    background: linear-gradient(135deg, #ffffff0c, #ffffff04);
+    border: 1px solid #ffffff18;
+    border-radius: 25px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 20px 80px #00000016;
+}
+
+/* Новые стили для фотогалереи */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.photo-gallery img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 1px solid #ffffff18;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.photo-gallery img:hover {
+    transform: scale(1.03);
+    border-color: #ff5c9a55;
+}
+
+
+.letter-photos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.letter-photos img {
+    width: calc(33.33% - 7px);
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #ffffff12;
+}
+
+
+.love-card {
+    padding: clamp(25px, 6vw, 48px);
+    line-height: 2.15;
+    font-size: 13px;
+    color: #e6d5e9;
+    position: relative;
+    overflow: hidden;
+}
+
+.love-card::before {
+    content: "♡";
+    position: absolute;
+    right: 12px;
+    top: -30px;
+    font-size: 160px;
+    color: #ff78b208;
+    pointer-events: none;
+}
+
+.love-card p {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.love-card p:last-child {
+    margin-bottom: 0;
+}
+
+.love-card strong {
+    color: #ff91bc;
+}
+
+.love-card .signature {
+    font-family: 'Great Vibes', cursive;
+    color: #ff8bb9;
+    font-size: 38px;
+    text-align: right;
+    margin-top: 30px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.mini-card {
+    padding: 25px 13px;
+    text-align: center;
+    transition: .35s;
+}
+
+.mini-card:hover {
+    transform: translateY(-7px);
+    border-color: #ff76b855;
+}
+
+.mini-card .emoji {
+    font-size: 30px;
+    display: block;
+    margin-bottom: 17px;
+}
+
+.mini-card h3 {
+    font-size: 12px;
+    margin-bottom: 12px;
+    color: #ffb1ce;
+}
+
+.mini-card p {
+    color: #bcaac5;
+    font-size: 10px;
+    line-height: 1.9;
+}
+
+.counter {
+    padding: 35px 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.counter .number {
+    font-size: 55px;
+    display: block;
+    margin: 15px;
+    background: linear-gradient(120deg, #ff7cae, #c6a1ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.counter p {
+    font-size: 12px;
+    color: #cbb7d1;
+    line-height: 1.9;
+}
+
+.letter-box {
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.letter-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+    display: block;
+    animation: float 3s infinite;
+}
+
+.letter-box h3 {
+    font-size: 19px;
+    margin-bottom: 12px;
+}
+
+.letter-box p {
+    color: #bda9c5;
+    font-size: 12px;
+    line-height: 2;
+    margin-bottom: 24px;
+}
+
+#letter {
+    display: none;
+    margin-top: 25px;
+    padding: 25px;
+    text-align: left;
+    color: #f1dfea;
+    font-size: 12px;
+    line-height: 2.2;
+    white-space: normal;
+}
+
+#letter.show {
+    display: block;
+    animation: fadeUp .7s both;
+}
+
+#letter p {
+    margin-bottom: 17px;
+}
+
+.reasons {
+    display: grid;
+    gap: 12px;
+}
+
+.reason {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 19px;
+    border-radius: 18px;
+    border: 1px solid #ffffff12;
+    background: #ffffff05;
+    transition: .3s;
+}
+
+.reason:hover {
+    background: #ff6ba510;
+    transform: translateX(5px);
+}
+
+.reason span {
+    font-size: 23px;
+}
+
+.reason p {
+    font-size: 12px;
+    line-height: 1.9;
+    color: #d7c4dc;
+}
+
+.reason strong {
+    color: #ff9ec3;
+}
+
+.final {
+    text-align: center;
+    padding-bottom: 100px;
+}
+
+.final-heart {
+    font-size: 65px;
+    display: inline-block;
+    animation: heartbeat 1.3s infinite;
+    filter: drop-shadow(0 0 25px #ff477888);
+}
+
+.final h2 {
+    font-size: clamp(28px, 6vw, 48px);
+    line-height: 1.5;
+    margin: 25px 0;
+}
+
+.final p {
+    color: #c5b0ce;
+    font-size: 12px;
+    line-height: 2.2;
+    max-width: 540px;
+    margin: 0 auto 25px;
+}
+
+footer {
+    border-top: 1px solid #ffffff12;
+    padding: 28px 15px;
+    text-align: center;
+    color: #8e7698;
+    font-size: 10px;
+    line-height: 2;
+}
+
+footer span {
+    color: #ff83b5;
+}
+
+.floating-heart {
+    position: fixed;
+    pointer-events: none;
+    z-index: 100;
+    animation: rise 2.4s ease-out forwards;
+}
+
+.toast {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translate(-50%, 30px);
+    opacity: 0;
+    background: #25142eeb;
+    border: 1px solid #ff8ab744;
+    padding: 15px 22px;
+    border-radius: 50px;
+    color: #ffe6f2;
+    font-size: 11px;
+    text-align: center;
+    z-index: 101;
+    transition: .35s;
+    width: max-content;
+    max-width: 90%;
+}
+
+.toast.visible {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-9px); }
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    15% { transform: scale(1.15); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.1); }
+}
+
+@keyframes rise {
+    0% { opacity: 1; transform: translateY(0) scale(.7) rotate(0); }
+    100% { opacity: 0; transform: translateY(-240px) scale(1.5) rotate(25deg); }
+}
+
+@media (max-width: 600px) {
+    nav {
+        padding: 13px 15px;
+    }
+
+    nav a {
+        font-size: 9px;
+    }
+
+    .logo {
+        font-size: 11px;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .photo-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .letter-photos img {
+        width: calc(50% - 5px);
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .mini-card {
+        padding: 25px;
+    }
+
+    .mini-card p {
+        font-size: 11px;
+    }
+
+    section {
+        padding: 65px 17px;
+    }
+
+    .love-card {
+        font-size: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="stars"></canvas>
+
+<nav>
+    <div class="logo">♡ ДЛЯ ЛЕРЫ</div>
+    <a href="#feelings">Мои чувства</a>
+    <a href="#reasons">Почему ты</a>
+    <a href="#letter-section">Письмо 💌</a>
+</nav>
+
+<header class="hero">
+    <div class="eyebrow">✦ САМЫЙ ОСОБЕННЫЙ ЧЕЛОВЕК В МИРЕ ✦</div>
+
+    <h1>Лера</h1>
+    <div class="script">ты моё счастье</div>
+
+    <p class="subtitle">
+        Есть миллионы слов в мире, но даже их иногда не хватает,
+        чтобы объяснить, насколько сильно можно любить одного человека.
+        Эта маленькая вселенная создана только для тебя. ❤️
+    </p>
+
+    <button class="btn" onclick="openLove()">
+        ОТКРЫТЬ МОЁ СЕРДЦЕ ♡
+    </button>
+
+    <div class="scroll-hint">ЛИСТАЙ НИЖЕ ↓</div>
+</header>
+
+<section id="feelings">
+    <div class="container">
+        <div class="section-label reveal">То, что у меня внутри</div>
+        <h2 class="section-title reveal">Лера, если бы ты только знала…</h2>
+
+        <p class="section-desc reveal">
+            Иногда самые важные чувства сложно выразить обычными словами.
+            Но сегодня я хочу хотя бы немного рассказать тебе о том,
+            что ты для меня значит.
+        </p>
+
+        <!-- ГАЛЕРЕЯ ФОТО ВНАЧАЛЕ РАЗДЕЛА -->
+        <div class="photo-gallery reveal">
+            <img src="FOTO/1.jpeg" alt="Лера и я" loading="lazy">
+            <img src="FOTO/2.jpeg" alt="Лера" loading="lazy">
+            <img src="FOTO/3.jpeg" alt="Смешные мы" loading="lazy">
+        </div>
+
+        <div class="glass love-card reveal">
+            <p>
+                <strong>Моя любимая Лера…</strong> ❤️ Я даже не знаю,
+                с чего правильно начать, потому что, когда я думаю о тебе,
+                внутри столько эмоций, что их просто невозможно собрать
+                в несколько предложений. Мне хочется рассказать тебе обо
+                всём, что я чувствую, о том, насколько ты дорога мне,
+                и о том, как много места ты занимаешь в моём сердце.
+            </p>
+
+            <p>
+                Знаешь, ты стала для меня человеком, о котором хочется
+                думать без всякого повода. Иногда достаточно просто
+                вспомнить тебя, твою улыбку, твой голос или какой-нибудь
+                наш момент, и настроение уже становится совсем другим.
+                В мире, где каждый куда-то спешит, есть ты — моя люимая Лера,
+                о которой хочется думать медленно, тепло и с огромной нежностью.
+            </p>
+
+            <p>
+                <strong>Я очень сильно тебя люблю.</strong> И это не просто
+                красивые слова, которые хочется сказать ради романтики.
+                Я хочу, чтобы ты чувствовала мою любовь не только тогда,
+                когда я говорю о ней, но и тогда, когда поддерживаю тебя,
+                слушаю, интересуюсь твоим днём, стараюсь понять тебя
+                и просто нахожусь рядом, когда тебе это нужно.
+            </p>
+
+            <p>
+                Для меня ты не обязана быть идеальной. Тебе не нужно
+                постоянно улыбаться, всегда быть в хорошем настроении
+                или делать вид, что у тебя всё прекрасно. Я хочу знать
+                настоящую тебя — с твоими мечтами, переживаниями,
+                смешными привычками, неожиданными мыслями и всеми теми
+                маленькими особенностями, которые делают тебя именно тобой.
+            </p>
+
+            <p>
+                Мне хочется, чтобы рядом со мной ты могла оставаться собой.
+                Чтобы ты могла смеяться от души, рассказывать мне всякую
+                ерунду, делиться своими планами, говорить о том, что тебя
+                волнует, и знать, что твои чувства имеют значение.
+                Мне важно не только говорить, что люблю тебя, но и
+                показывать, что я уважаю тебя и ценю то, что между нами есть.
+            </p>
+
+            <p>
+                Если бы меня попросили описать счастье, я бы не стал
+                искать какое-то сложное определение. Я бы рассказал о
+                простых вещах: о тёплом разговоре с тобой, о твоём
+                сообщении, которого я ждал, о твоём смехе, о моментах,
+                когда мы понимаем друг друга без лишних объяснений.
+                Ведь иногда именно такие мелочи оказываются самыми
+                ценными воспоминаниями.
+            </p>
+
+            <p>
+                Я хочу создавать с тобой воспоминания, над которыми мы
+                когда-нибудь будем смеяться. Хочу узнавать тебя всё лучше,
+                открывать новые стороны твоего характера, вместе радоваться
+                маленьким победам и учиться проходить через сложные дни.
+                Не обещать, что каждый день будет идеальным, а стараться
+                делать наши отношения добрее, крепче и счастливее.
+            </p>
+
+            <p>
+                Лера, ты заслуживаешь заботы, уважения, честности и
+                настоящего тепла. Я хочу, чтобы ты никогда не сомневалась
+                в том, что достойна всего этого. Мне хочется поддерживать
+                твои мечты, радоваться твоим успехам так, словно они мои,
+                и напоминать тебе о том, какая ты замечательная,
+                особенно в те дни, когда ты сама об этом забываешь.
+            </p>
+
+            <p>
+                Я не могу знать заранее, каким будет каждый следующий день,
+                но могу говорить честно о том, что чувствую сейчас.
+                Сейчас моё сердце наполнено любовью к тебе.
+                Мне хочется беречь наши хорошие моменты, не принимать
+                тебя как должное и ценить возможность быть частью твоей жизни.
+            </p>
+
+            <p>
+                <strong>Спасибо тебе за то, что ты есть.</strong>
+                За то, что именно ты вызываешь у меня столько нежности.
+                За то, что мне хочется писать такие длинные признания,
+                придумывать для тебя что-нибудь особенное и стараться
+                выразить словами то, что иногда намного больше любых слов.
+            </p>
+
+            <p>
+                И если однажды ты спросишь меня, почему я тебя люблю,
+                я, наверное, не смогу назвать одну-единственную причину.
+                Потому что дело не в чём-то одном. Мне дорога ты целиком:
+                твоя личность, твои мысли, твои эмоции, твоя индивидуальность
+                и то особенное чувство, которое появляется у меня,
+                когда я думаю о нас.
+            </p>
+
+            <p>
+                <strong>Я люблю тебя, Лера. Очень, очень сильно, бесконечность бесонечность бесконечность.</strong>
+                И мне хочется, чтобы эта любовь приносила тебе радость,
+                уверенность и тепло. Не только сегодня, когда ты читаешь
+                это признание, но и во множестве обычных дней впереди.
+            </p>
+
+            <div class="signature">Твой человек ❤️</div>
+        </div>
+    </div>
+</section>
+
+<section id="reasons">
+    <div class="container">
+        <div class="section-label reveal">Маленькие признания</div>
+        <h2 class="section-title reveal">Почему именно ты? 💗</h2>
+
+        <p class="section-desc reveal">
+            Потому что любовь — это не только одно большое чувство.
+            Она ещё и сотни маленьких причин, которые становятся
+            важными, когда появляется особенный человек.
+        </p>
+
+        <div class="cards">
+            <div class="glass mini-card reveal">
+                <span class="emoji">🌷</span>
+                <h3>Твоя улыбка</h3>
+                <p>Есть улыбки, которые просто красивые, а есть та,
+                которую хочется видеть снова и снова. Твоя для меня особенная.</p>
+            </div>
+
+            <div class="glass mini-card reveal">
+                <span class="emoji">✨</span>
+                <h3>Твоя индивидуальность</h3>
+                <p>Мне нравится, что ты — это ты. Со своим характером,
+                мыслями, привычками и неповторимым взглядом на мир.</p>
+            </div>
+
+            <div class="glass mini-card reveal">
+                <span class="emoji">💌</span>
+                <h3>Наши разговоры</h3>
+                <p>Даже простой разговор может стать дорогим воспоминанием,
+                когда общаешься с человеком, который тебе небезразличен.</p>
+            </div>
+
+            <div class="glass mini-card reveal">
+                <span class="emoji">🫶</span>
+                <h3>Тепло рядом с тобой</h3>
+                <p>Мне хочется, чтобы между нами было место для доверия,
+                спокойствия, искренности и взаимной поддержки.</p>
+            </div>
+
+            <div class="glass mini-card reveal">
+                <span class="emoji">🌙</span>
+                <h3>Мысли о тебе</h3>
+                <p>Иногда среди самых обычных дел я вспоминаю тебя
+                и ловлю себя на мысли, как же сильно ты мне дорога.</p>
+            </div>
+
+            <div class="glass mini-card reveal">
+                <span class="emoji">💖</span>
+                <h3>Просто ты</h3>
+                <p>Не потому, что должна соответствовать каким-то ожиданиям.
+                А потому, что ты стала для меня очень особенным человеком.</p>
+            </div>
+        </div>
+
+        <div class="glass counter reveal">
+            <div class="section-label">Маленькая математика любви</div>
+            <span class="number" id="loveNumber">100%</span>
+            <p>
+                Сколько места ты занимаешь в моих мыслях?<br>
+                Формулы не помогут. Но одно я знаю точно:<br>
+                <strong style="color:#ff94bf">ты для меня очень много значишь.</strong>
+            </p>
+            <button class="btn" style="margin-top:23px" onclick="moreLove()">
+                ПРОВЕРИТЬ МОЮ ЛЮБОВЬ 💘
+            </button>
+        </div>
+    </div>
+</section>
+
+<section id="letter-section">
+    <div class="container">
+        <div class="section-label reveal">Личное послание</div>
+        <h2 class="section-title reveal">Письмо, которое для тебя 💌</h2>
+
+        <p class="section-desc reveal">
+            Здесь есть ещё кое-что. Нажми на кнопку и прочитай
+            слова, которые я хочу оставить именно тебе.
+        </p>
+
+        <div class="glass letter-box reveal">
+            <span class="letter-icon">💌</span>
+            <h3>Для моей любимой Леры</h3>
+            <p>Одно нажатие — и ещё немного любви.</p>
+
+            <button class="btn" id="letterButton" onclick="toggleLetter()">
+                ОТКРЫТЬ ПИСЬМО ❤️
+            </button>
+
+            <div class="glass" id="letter">
+                <p>Моя дорогая Лера! ❤️</p>
+
+                <p>
+                    Если ты читаешь это письмо, значит, я смог хотя бы
+                    немного передать тебе то, что чувствую. И знаешь,
+                    мне хочется, чтобы ты сейчас просто улыбнулась.
+                    Не потому, что я написал много красивых слов,
+                    а потому, что где-то есть человек, которому ты
+                    действительно дорога.
+                </p>
+
+                <p>
+                    Я люблю тебя больше, чем иногда умею показать.
+                    Порой самые важные чувства трудно объяснить,
+                    потому что они живут не только в словах, но и
+                    в мыслях, поступках, переживаниях и маленьких
+                    желаниях сделать любимого человека счастливее.
+                </p>
+
+                <div class="letter-photos">
+                    <img src="FOTO/4.jpeg" alt="Моё любимое солнышко" loading="lazy">
+                    <img src="FOTO/5.jpeg" alt="Ты и я" loading="lazy">
+                    <img src="FOTO/6.jpeg" alt="Счастливые моменты" loading="lazy">
+                    <img src="FOTO/7.jpeg" alt="Три кадра про нас" loading="lazy">
+                    <img src="FOTO/8.jpeg" alt="Любовь" loading="lazy">
+                    <img src="FOTO/9.jpeg" alt="Ты" loading="lazy">
+                </div>
+
+                <p>
+                    Мне хочется узнавать тебя каждый день заново.
+                    Слушать твои истории, узнавать, что тебя радует,
+                    что заставляет смеяться, о чём ты мечтаешь
+                    и какие моменты делают тебя по-настоящему счастливой.
+                    Мне важно, чтобы тебе было хорошо рядом со мной.
+                </p>
+
+                <p>
+                    Я не обещаю, что всегда буду находить идеальные слова.
+                    Но я хочу учиться лучше понимать тебя, слышать тебя,
+                    уважать твои чувства и показывать свою любовь
+                    не только в особенные даты, но и в обычные дни.
+                </p>
+
+                <p>
+                    Спасибо, что ты есть в моей жизни. Спасибо за каждый
+                    момент, который связан с тобой, и за возможность
+                    испытывать это прекрасное чувство. Я хочу, чтобы
+                    ты знала: для меня ты не просто имя на экране.
+                    Ты человек, о котором я думаю с нежностью,
+                    которого хочу радовать и которым искренне дорожу.
+                </p>
+
+                <p>
+                    Когда-нибудь я хочу вспоминать наши сегодняшние
+                    моменты и улыбаться тому, сколько всего мы узнали
+                    друг о друге, сколько историй у нас появилось
+                    и сколько простых счастливых дней мы разделили.
+                </p>
+
+                <p>
+                    Лера, если бы я мог подарить тебе что-то прямо сейчас,
+                    я подарил бы тебе возможность увидеть себя моими глазами
+                    хотя бы на одну минуту. Тогда ты поняла бы, насколько
+                    ты замечательная и как сильно я тебя ценю.
+                </p>
+
+                <p>
+                    И напоследок я хочу сказать самое главное:
+                    <strong>я люблю тебя, Лера. Ты очень дорога мне.</strong>
+                    Мне хочется беречь нашу любовь, радовать тебя,
+                    заботиться о тебе и вместе создавать что-то настоящее.
+                </p>
+
+                <p>
+                    Пусть у тебя будет много поводов улыбаться.
+                    Пусть рядом будут добрые люди, сбываются твои мечты,
+                    а в сердце всегда остаётся место для счастья.
+                    И пусть ты никогда не забываешь, что ты особенная.
+                </p>
+
+                <p style="text-align:center;color:#ff91bc;font-size:15px">
+                    Ты + я + много счастливых воспоминаний. ♡
+                </p>
+
+                <p style="text-align:right;font-family:'Great Vibes',cursive;font-size:30px;color:#ff8bb9">
+                    С огромной любовью, для тебя ❤️
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="final">
+    <div class="container reveal">
+        <div class="final-heart">❤️</div>
+
+        <h2>
+            Если весь мир — это история,<br>
+            <span style="color:#ff82b5">ты — моя любимая глава.</span>
+        </h2>
+
+        <p>
+            Лера, я не знаю, сколько ещё красивых слов существует на свете,
+            но знаю, что ни одно из них не сможет полностью описать,
+            насколько ты мне дорога. Поэтому вместо тысячи обещаний
+            я хочу оставить тебе простую истину: ты очень важна для меня,
+            я искренне люблю тебя и хочу, чтобы ты была счастлива.
+        </p>
+
+        <button class="btn" onclick="heartRain()">
+            ЭТО ВСЁ ДЛЯ ТЕБЯ, ЛЕРА 💖
+        </button>
+    </div>
+</section>
+
+<footer>
+    Создано с любовью <span>❤️</span> специально для Леры<br>
+    Один сайт. Тысячи чувств. И одно особенное имя.
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const canvas = document.getElementById('stars');
+const ctx = canvas.getContext('2d');
+
+let stars = [];
+let width = 0;
+let height = 0;
+
+function resizeCanvas() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+    width = window.innerWidth;
+    height = window.innerHeight;
+
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+
+    canvas.style.width = width + 'px';
+    canvas.style.height = height + 'px';
+
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    stars = Array.from({
+        length: Math.min(110, Math.floor(width / 5))
+    }, () => ({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        r: Math.random() * 1.5 + .3,
+        a: Math.random() * .65 + .15,
+        speed: Math.random() * .006 + .002
+    }));
+}
+
+function drawStars() {
+    ctx.clearRect(0, 0, width, height);
+
+    for (const star of stars) {
+        star.a += Math.sin(Date.now() * star.speed) * .001;
+
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255,190,225,${Math.max(.1, Math.min(.9, star.a))})`;
+        ctx.fill();
+    }
+
+    requestAnimationFrame(drawStars);
+}
+
+resizeCanvas();
+drawStars();
+
+window.addEventListener('resize', resizeCanvas);
+
+// Появление блоков при прокрутке
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(element => {
+    observer.observe(element);
+});
+
+// Красивые сердечки
+const hearts = ['❤️', '💗', '💖', '💕', '💘', '💓', '✨'];
+
+function createHeart(x, y) {
+    const heart = document.createElement('span');
+
+    heart.className = 'floating-heart';
+    heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+
+    heart.style.left = x + 'px';
+    heart.style.top = y + 'px';
+    heart.style.fontSize = (16 + Math.random() * 23) + 'px';
+    heart.style.animationDuration = (1.6 + Math.random() * 1.4) + 's';
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 3200);
+}
+
+document.addEventListener('click', event => {
+    if (event.target.closest('button, a')) return;
+
+    for (let i = 0; i < 3; i++) {
+        setTimeout(() => {
+            createHeart(
+                event.clientX + (Math.random() - .5) * 65,
+                event.clientY + (Math.random() - .5) * 35
+            );
+        }, i * 100);
+    }
+});
+
+function heartRain() {
+    const button = event.currentTarget;
+    const rect = button.getBoundingClientRect();
+
+    for (let i = 0; i < 38; i++) {
+        setTimeout(() => {
+            createHeart(
+                Math.random() * window.innerWidth,
+                window.innerHeight * (.4 + Math.random() * .5)
+            );
+        }, i * 45);
+    }
+
+    showToast('Лера, это всё от самого сердца! ❤️');
+}
+
+function openLove() {
+    document.getElementById('feelings').scrollIntoView({
+        behavior: 'smooth'
+    });
+
+    for (let i = 0; i < 12; i++) {
+        setTimeout(() => {
+            createHeart(
+                window.innerWidth / 2 + (Math.random() - .5) * 220,
+                window.innerHeight * .7
+            );
+        }, i * 100);
+    }
+
+    showToast('Это только начало моего признания 💗');
+}
+
+function toggleLetter() {
+    const letter = document.getElementById('letter');
+    const button = document.getElementById('letterButton');
+
+    const isOpen = letter.classList.toggle('show');
+
+    button.textContent = isOpen
+        ? 'ЗАКРЫТЬ ПИСЬМО 💌'
+        : 'ОТКРЫТЬ ПИСЬМО ❤️';
+
+    if (isOpen) {
+        setTimeout(() => {
+            letter.scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest'
+            });
+
+            heartRainAtLetter();
+        }, 150);
+    }
+}
+
+function heartRainAtLetter() {
+    const rect = document.getElementById('letter').getBoundingClientRect();
+
+    for (let i = 0; i < 10; i++) {
+        setTimeout(() => {
+            createHeart(
+                rect.left + Math.random() * rect.width,
+                Math.max(20, rect.top + 40)
+            );
+        }, i * 100);
+    }
+}
+
+let loveClicks = 0;
+
+function moreLove() {
+    loveClicks++;
+
+    const number = document.getElementById('loveNumber');
+
+    number.textContent = loveClicks < 5
+        ? ['100%', '∞', '1000%', 'БЕЗ МЕРЫ', '∞ ❤️'][loveClicks]
+        : '∞ ❤️';
+
+    for (let i = 0; i < 9; i++) {
+        setTimeout(() => {
+            createHeart(
+                window.innerWidth / 2 + (Math.random() - .5) * 180,
+                window.innerHeight * .65
+            );
+        }, i * 90);
+    }
+
+    showToast(
+        loveClicks === 1
+            ? 'Кажется, проценты уже не справляются! 💗'
+            : 'Моя любовь не помещается в цифры! ❤️'
+    );
+}
+
+let toastTimeout;
+
+function showToast(message) {
+    const toast = document.getElementById('toast');
+
+    toast.textContent = message;
+    toast.classList.add('visible');
+
+    clearTimeout(toastTimeout);
+
+    toastTimeout = setTimeout(() => {
+        toast.classList.remove('visible');
+    }, 2600);
+}
+</script>
+
+</body>
+</html>
